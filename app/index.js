@@ -7,6 +7,10 @@ import UserProvider from '../utils/context';
 import UserProfileScreen from '../components/profileCatalogue';
 import { Image, StyleSheet, TouchableOpacity, View } from 'react-native';
 import AntDesign from '@expo/vector-icons/AntDesign';
+import Calendar from '../components/Calender';
+import YourSchedule from '../components/YourSchedule';
+import ScheduleScreen from '../components/YourSchedule';
+import ScheduleDetails from '../components/ScheduleDetail';
 
 const Drawer = createDrawerNavigator();
 
@@ -42,6 +46,12 @@ const App = () => {
       >
         <Drawer.Screen name="Home" component={HomePage} />
         <Drawer.Screen name="Amazon" component={UserInputForm} />
+        <Drawer.Screen name="CALENDER" component={Calendar} />
+        <Drawer.Screen name="YOUR SCHEDULE" component={ScheduleScreen} />
+        <Drawer.Screen name="SCHEDULE DETAILS" component={ScheduleDetails} />
+
+
+
         <Drawer.Screen
           name="Profile"
           component={UserProfileScreen}

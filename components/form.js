@@ -19,6 +19,20 @@ import { UserContext } from "../utils/context";
 const UserInputForm = () => {
     const [selectedImage, setSelectedImage] = useState(null);
     const [textInput, setTextInput] = useState("");
+    const [addressOne, setAddressOne] = useState("");
+
+    const [addressTwo, setAddressTwo] = useState("");
+    const [addressThree, setAddressThree] = useState("");
+
+
+    const [startTime, setStartTime] = useState("");
+
+    const [endTime, setEndTime] = useState("");
+    const [duration, setDuration] = useState("");
+
+
+    const [Amount, setAmount] = useState("");
+
     const [submittedText, setSubmittedText] = useState("");
 
     const { setUserData } = useContext(UserContext);
@@ -55,7 +69,7 @@ const UserInputForm = () => {
             Alert.alert("Incomplete Form", "Please select an image and enter text.");
             return;
         }
-        setUserData({ name: textInput, image: selectedImage });
+        setUserData({ name: textInput, image: selectedImage , addressOne: addressOne, addressTwo: addressTwo, addressThree:addressThree, startTime: startTime, endTime: endTime, duration:duration, Amount: Amount});
         setSubmittedText(textInput);
         setTextInput("");
     };
@@ -94,6 +108,70 @@ const UserInputForm = () => {
                             onChangeText={setTextInput}
                         />
                     </View>
+                    <View style={styles.inputContainer}>
+                        <Text style={styles.inputLabel}>Address One</Text>
+                        <TextInput
+                            style={styles.textInput}
+                            placeholder="Enter your name"
+                            value={addressOne}
+                            onChangeText={setAddressOne}
+                        />
+                    </View>
+                    <View style={styles.inputContainer}>
+                        <Text style={styles.inputLabel}>Address Two</Text>
+                        <TextInput
+                            style={styles.textInput}
+                            placeholder="Enter your name"
+                            value={addressTwo}
+                            onChangeText={  setAddressTwo}
+                        />
+                    </View>
+                    <View style={styles.inputContainer}>
+                        <Text style={styles.inputLabel}>Address Three</Text>
+                        <TextInput
+                            style={styles.textInput}
+                            placeholder="Enter your name"
+                            value={addressThree}
+                            onChangeText={  setAddressThree}
+                        />
+                    </View>
+                    <View style={styles.inputContainer}>
+                        <Text style={styles.inputLabel}>Start Time with AM or PM</Text>
+                        <TextInput
+                            style={styles.textInput}
+                            placeholder="Enter your name"
+                            value={startTime}
+                            onChangeText={setStartTime}
+                        />
+                    </View>
+                    <View style={styles.inputContainer}>
+                        <Text style={styles.inputLabel}>End time with AM or PM</Text>
+                        <TextInput
+                            style={styles.textInput}
+                            placeholder="Enter your name"
+                            value={endTime}
+                            onChangeText={setEndTime}
+                        />
+                    </View>
+                    <View style={styles.inputContainer}>
+                        <Text style={styles.inputLabel}>Duration full with Hours and minutes</Text>
+                        <TextInput
+                            style={styles.textInput}
+                            placeholder="Enter your name"
+                            value={duration}
+                            onChangeText={setDuration}
+                        />
+                    </View>
+                    <View style={styles.inputContainer}>
+                        <Text style={styles.inputLabel}>Amount</Text>
+                        <TextInput
+                            style={styles.textInput}
+                            placeholder="Enter your name"
+                            value={Amount}
+                            onChangeText={setAmount}
+                        />
+                    </View>
+
 
                     <TouchableOpacity onPress={handleSubmit} style={styles.submitButton}>
                         <Text style={styles.submitButtonText}>Submit</Text>

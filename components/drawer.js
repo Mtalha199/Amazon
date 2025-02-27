@@ -45,7 +45,7 @@ const DrawerContent = ({ navigation }) => {
                     <Text style={[styles.drawerItemText, { color: '#fff' }]}>Learning Portal</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.drawerItem}>
-                    <Text style={[styles.drawerItemText, { color: '#fff' }]}>Calendar</Text>
+                    <Text style={[styles.drawerItemText, { color: '#fff' }]} onPress={() => navigation.navigate('CALENDER')}>Calendar</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.drawerItem}>
                     <Text style={[styles.drawerItemText, { color: '#fff' }]}>Earnings</Text>
